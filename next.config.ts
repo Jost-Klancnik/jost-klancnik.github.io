@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-    output: "export",
+    basePath: '/jost-klancnik.github.io',
+    output: 'export',
+    reactStrictMode: true,
 };
 
 export default nextConfig;
