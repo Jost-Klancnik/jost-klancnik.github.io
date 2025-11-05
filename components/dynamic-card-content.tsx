@@ -20,6 +20,7 @@ import {
     GitBranch,
     Users,
     BookOpen,
+    CircleDollarSign,
 } from "lucide-react"
 
 export const AboutContent = () => (
@@ -47,6 +48,13 @@ export const AboutContent = () => (
                                 <a href="https://github.com/Jost-Klancnik"
                                    className="hover:text-primary transition-colors">
                                     github.com/Jost-Klancnik
+                                </a>
+                            </div>
+                            <div className="flex items-center gap-2 text-muted-foreground">
+                                <CircleDollarSign className="h-4 w-4"/>
+                                <a href="https://www.fiverr.com/s/qDp4wgZ"
+                                   className="hover:text-primary transition-colors">
+                                    Fiverr
                                 </a>
                             </div>
                             <div className="flex items-center gap-2 text-muted-foreground">
