@@ -10,21 +10,21 @@ import {
   Briefcase,
   Code,
   GraduationCap,
-  FileText,
+  FileText, LinkIcon,
 } from "lucide-react"
 import {
   AboutPreview,
   ProjectsPreview,
   SkillsPreview,
   ExperiencePreview,
-  ResumePreview,
+  LinksPreview,
 } from "@/components/dynamic-card-previews"
 import {
   AboutContent,
   ProjectsContent,
   SkillsContent,
   ExperienceContent,
-  ResumeContent,
+  LinksContent,
 } from "@/components/dynamic-card-content"
 
 const portfolioData: DynamicCardData[] = [
@@ -35,6 +35,14 @@ const portfolioData: DynamicCardData[] = [
     size: "large",
     preview: <AboutPreview />,
     content: <AboutContent />,
+  },
+  {
+    id: "links",
+    title: "Links",
+    icon: <LinkIcon className="h-6 w-6" />,
+    size: "small",
+    preview: <LinksPreview />,
+    content: <LinksContent />,
   },
   {
     id: "skills",
@@ -59,14 +67,6 @@ const portfolioData: DynamicCardData[] = [
     size: "small",
     preview: <ExperiencePreview />,
     content: <ExperienceContent />,
-  },
-  {
-    id: "resume",
-    title: "Resume",
-    icon: <FileText className="h-6 w-6" />,
-    size: "small",
-    preview: <ResumePreview />,
-    content: <ResumeContent />,
   },
 ]
 

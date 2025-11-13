@@ -176,14 +176,15 @@ export const ExperiencePreview = () => (
     </div>
 )
 
-export const ResumePreview = () => (
+export const LinksPreview = () => (
     <div className="h-full p-6 flex flex-col">
-        <h3 className="text-xl font-bold mb-4">Resume</h3>
+        <h3 className="text-xl font-bold mb-4">My Links</h3>
         <div className="flex flex-col items-center justify-center h-full">
-            <Button variant="outline" size="icon">
-                <FileText className="h-24 w-24"/>
+            <Button variant="link" size="icon" className="mb-4">
+                <LinkIcon className="h-24 w-24"/>
             </Button>
-            <p>Coming soon...</p>
+            <br/>
+            <p>Get all my links here</p>
         </div>
     </div>
 )

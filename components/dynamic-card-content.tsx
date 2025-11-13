@@ -21,7 +21,12 @@ import {
     Users,
     BookOpen,
     CircleDollarSign,
+    LinkIcon,
+    LucideCircleDollarSign, BadgeDollarSign
 } from "lucide-react"
+import Link from "next/link";
+import {BiDollar} from "react-icons/bi";
+import {AiOutlineDollar} from "react-icons/ai";
 
 export const AboutContent = () => (
     <div className="space-y-8">
@@ -615,7 +620,7 @@ export const ContactContent = () => (
     </div>
 )
 
-export const ResumeContent = () => (
+export const LinksContent = () => (
     <div className="max-w-2xl mx-auto space-y-8 text-center">
         <div className="flex justify-center">
             <motion.div
@@ -624,50 +629,41 @@ export const ResumeContent = () => (
                 transition={{duration: 0.5, ease: "easeOut"}}
                 className="w-48 h-48 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center"
             >
-                <Download className="h-24 w-24 text-primary"/>
+                <LinkIcon className="h-24 w-24 text-primary"/>
             </motion.div>
         </div>
 
-        <div className="space-y-4">
-            <h3 className="text-3xl font-bold">Download My Resume</h3>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto">
-                Get a comprehensive overview of my experience, skills, and qualifications in a convenient PDF
-                format.
-            </p>
-        </div>
-
-        {/*TODO: Delete/Comment out this part when you have your resume ready*/}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button size="lg" disabled={true} className="gap-2">
-                <Download className="h-5 w-5"/>
-                <span className="font-bold">
-                    Coming Soon...
-                </span>
-            </Button>
-        </div>
-
-        {/*TODO: Change this when you have the resume ready.*/}
-        {/*<div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button size="lg" className="gap-2">
-                <Download className="h-5 w-5"/>
-                Download PDF
-            </Button>
-            <Button variant="outline" size="lg" className="gap-2">
-                <ExternalLink className="h-5 w-5"/>
-                View Online
-            </Button>
-        </div>
-
-        <div className="pt-8 space-y-3">
-            <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4"/>
-                <span>Last updated: October 2025</span>
+        <div className="space-y-6">
+            <h3 className="text-3xl font-bold">My Links</h3>
+            <p className="text-muted-foreground leading-relaxed">All my social and professional links in one place.</p>
+            <div className="flex flex-wrap gap-4 justify-center">
+                {[
+                    {
+                        href: "https://github.com/Jost-Klancnik",
+                        label: "GitHub",
+                        icon: <Github className="h-8 w-8"/>},
+                    {
+                        href: "https://www.fiverr.com/jostklancnik/build-a-modern-fast-and-responsive-website-or-landing-page",
+                        label: "Fiverr",
+                        icon: <CircleDollarSign className="h-8 w-8"/>
+                    },
+                    {
+                        href: "https://www.upwork.com/freelancers/~0125a4b65ba4ef635e?mp_source=share",
+                        label: "UpWork",
+                        icon: <BadgeDollarSign className="h-8 w-8"/>},
+                ].map((link, i) => (
+                    <div className="relative group">
+                        <Badge key={i} variant="default" className="w-12 h-12 rounded-full flex items-center justify-center">
+                            <Link href={link.href}>
+                                {link.icon}
+                            </Link>
+                        </Badge>
+                        <span className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-y-[-5px] transition-all bg-primary text-primary-foreground text-xs font-medium px-2 py-1 rounded-md shadow-md">
+                            {link.label}
+                        </span>
+                    </div>
+                ))}
             </div>
-            <div className="flex flex-wrap gap-3 justify-center">
-                <Badge variant="secondary">5+ Years Experience</Badge>
-                <Badge variant="secondary">Full Stack</Badge>
-                <Badge variant="secondary">Remote Available</Badge>
-            </div>
-        </div>*/}
+        </div>
     </div>
 )
